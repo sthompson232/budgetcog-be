@@ -180,7 +180,8 @@ class GetPastMonths(APIView):
 class UserProfile(APIView):
 
     def get(self, request):
-        profile = Profile.objects.get(user=request.user)
+        print(request.user)
+        profile = Profile.objects.get_or_create(user=request.user)
         serializer = ProfileSerializer(profile, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
