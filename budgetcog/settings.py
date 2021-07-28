@@ -7,7 +7,7 @@ SECRET_KEY = 'django-insecure-34_kf%-#piebrs3(l4#)1lj7_n32!@!ze-_hia2#5shkw^ta@t
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'budgetcog.xyz', 'www.budgetcog.xyz']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -60,7 +60,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'budgetcog.wsgi.application'
 
-if DEBUG:
+if not DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
