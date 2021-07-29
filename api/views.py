@@ -181,7 +181,7 @@ class UserProfile(APIView):
 
     def get(self, request):
         print(request.user)
-        profile = Profile.objects.get_or_create(user=request.user)
+        profile, created = Profile.objects.get_or_create(user=request.user)
         serializer = ProfileSerializer(profile, many=False)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
